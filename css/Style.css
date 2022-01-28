@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    background-color: #b3b3b3;
+}
+.wrapper{
+    margin:0;
+    padding:0;
+    height: 90vh;
+    /* border: solid 2px; */    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width:auto;
+    display: flex;
+    gap: 20px;
+    /* border: solid red 1px; */
+}
+.bigbox{
+    /* border: solid black 1px; */
+    width: 40%;
+    height: 6.2em;
+    padding:1.4em;
+    border-radius: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b3b3b3;
+    box-shadow:  10px 10px 12px #9a9a9a,
+                -10px -10px 12px #cccccc;
+}
+.timetext{
+    width: 5em;
+    min-width: fit-content;
+    /* border: solid red 1px; */
+    font-size: 3em;
+    font-weight: bolder;
+    font-family: Poppins;
+    color:#e4e4e4;
+}
+.daybox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.daytext{
+    font-size: 40px;
+}
+.datetext{
+    font-size: 25px;
+}
+
+@media only screen and (max-width:660px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .bigbox{
+        width:80%;
+    }
+}
