@@ -1,3 +1,7 @@
+function callfuns() {
+  getdate();
+  getLocation();
+}
 const months = {
   0: "Jan",
   1: "Feb",
@@ -12,7 +16,7 @@ const months = {
   10: "Nov",
   11: "Dec",
 };
-days = {
+const days = {
   0: "Sunday",
   1: "Monday",
   2: "Tuesday",
@@ -51,4 +55,34 @@ function getdate() {
   setTimeout(getdate, 1000);
 }
 
+//Geolocation for weather Part
 
+function getLocation() {
+  var x = document.getElementById("weather");
+  x.innerHTML = "fetching weather...";
+  var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0,
+  };
+
+  function success(pos) {
+    var crd = pos.coords;
+    x.innerHTML = "just a sec...";
+    getweather = async () => {
+      response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=d2bbc1c33f20a76b7b91d25f42acc8e4&units=metric`
+      );
+      const json = await response.json();
+      x.innerHTML = json.main.temp + "&#176" + "C";
+    };
+    getweather();
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+    x.innerHTML = "Please Allow location";
+  }
+
+  navigator.geolocation.getCurrentPosition(success, error, options);
+}
