@@ -40,6 +40,9 @@ body {
   font-weight: bolder;
   font-family: Poppins;
   color: #e4e4e4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .daybox {
   display: flex;
