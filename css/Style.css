@@ -52,7 +52,7 @@ body{
     font-size: 25px;
 }
 
-@media only screen and (max-width:660px){
+@media only screen and (max-width:768px){
     .container{
         display: flex;
         flex-direction: column;
