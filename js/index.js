@@ -84,7 +84,7 @@ function getLocation() {
     x.style.color = "yellow";
     x.style.fontSize = "1em";
     x.innerHTML =
-      "<i class='fas fa-exclamation-triangle'></i> Please allow location";
+      "<i class='fas fa-exclamation-triangle'></i> &nbsp;&nbsp;Please allow location";
   }
 
   navigator.geolocation.getCurrentPosition(success, error, options);
