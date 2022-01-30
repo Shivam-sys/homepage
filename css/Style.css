@@ -56,6 +56,56 @@ body {
 .datetext {
   font-size: 25px;
 }
+.notesbox {
+  height: 18em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  overflow-y: hidden;
+}
+.note {
+  display: flex;
+  flex-direction: row;
+  width: 93%;
+}
+.noteitem {
+  /* z-index: 2; */
+  /* border: solid red 1px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 2.5em;
+  width: 100%;
+  /* padding: 0.2em 0 0.2em 0.2em; */
+  border-radius: 8px;
+  background: #b6b6b6;
+  box-shadow: inset 5px 5px 10px #979797, inset -5px -5px 10px #ffffff;
+}
+.notetext {
+  color: #4e4e4e;
+  padding: 0.2em;
+  font-family: poppins;
+  font-size: 1.3em;
+  width: 90%;
+  /* height: 90%; */
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+.closebtn {
+  color: #773838;
+  width: 10%;
+  height: 100%;
+  background-color: rgba(255, 127, 80, 0.671);
+  outline: none;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media only screen and (max-width: 768px) {
   .container {
@@ -65,5 +115,8 @@ body {
   }
   .bigbox {
     width: 80%;
+  }
+  .notesbox {
+    display: none;
   }
 }
