@@ -6,11 +6,25 @@ body {
   margin: 0;
   padding: 0;
   height: 95vh;
-  width: 95vw;
+  width: 99vw;
   /* border: solid 2px; */
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.sunbox{
+  position: fixed;
+  /* border: solid red 1px; */
+}
+.sun{
+  position: absolute;
+  height: 8em;
+  width: 8em;
+  background-color: rgb(255, 177, 75);
+  border-radius: 50%;
+  top: -3.5em;
+  left: 1500px;
+  filter: blur(5px);
 }
 .container {
   width: auto;

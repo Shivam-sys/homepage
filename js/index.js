@@ -1,6 +1,7 @@
 function callfuns() {
   getdate();
   getLocation();
+  // setSunPosition();
 }
 const months = {
   0: "Jan",
@@ -56,9 +57,10 @@ function getdate() {
 }
 
 //Geolocation for weather Part
-
+var json = {};
 function getLocation() {
-  var x = document.getElementById("weather");
+  var x = document.getElementById("temperature");
+  var y = document.getElementById("weather");
   x.innerHTML = "fetching weather...";
   var options = {
     enableHighAccuracy: true,
@@ -73,8 +75,13 @@ function getLocation() {
       response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=d2bbc1c33f20a76b7b91d25f42acc8e4&units=metric`
       );
-      const json = await response.json();
+      json = await response.json();
       x.innerHTML = json.main.temp + "&#176" + "C";
+      y.innerHTML = json.weather[0].description;
+      var sunrise = json.sys.sunrise;
+      var sunset = json.sys.sunset;
+      console.log(sunrise);
+      setTimeout(setSunPosition(sunrise, sunset), 1000);
     };
     getweather();
   }
@@ -88,4 +95,11 @@ function getLocation() {
   }
 
   navigator.geolocation.getCurrentPosition(success, error, options);
+}
+function setSunPosition(sunrise, sunset) {
+  let sun = document.getElementById("sun");
+  let cts = Math.round(new Date().getTime() / 1000); //current UNIX time stamp
+  let val = (1643705285 - sunrise) / ((sunset - sunrise) / window.innerWidth);
+  console.log(val);
+  sun.style.left = val + "px";
 }
