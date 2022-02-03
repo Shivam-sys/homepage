@@ -96,10 +96,12 @@ function getLocation() {
 
   navigator.geolocation.getCurrentPosition(success, error, options);
 }
+//TRICKY PART
 function setSunPosition(sunrise, sunset) {
   let sun = document.getElementById("sun");
   let cts = Math.round(new Date().getTime() / 1000); //current UNIX time stamp
-  let val = (1643705285 - sunrise) / ((sunset - sunrise) / window.innerWidth);
+  let val = (cts - sunrise) / ((sunset - sunrise) / window.innerWidth);
   console.log(val);
   sun.style.left = val + "px";
 }
+//Yet to resolve- auto position sun according to the current, sunrise and sunset time.
