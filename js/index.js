@@ -88,9 +88,9 @@ function getLocation() {
 
   function error(err) {
     console.warn(`ERROR(${err.code}): ${err.message}`);
-    x.style.color = "yellow";
-    x.style.fontSize = "1em";
-    x.innerHTML =
+    y.style.color = "yellow";
+    y.style.fontSize = "1em";
+    y.innerHTML =
       "<i class='fas fa-exclamation-triangle'></i> &nbsp;&nbsp;Please allow location";
   }
 
